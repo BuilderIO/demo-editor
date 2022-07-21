@@ -17,7 +17,7 @@ export async function getStaticProps({ params }) {
     learn more here: https://www.builder.io/c/docs/targeting-with-builder
   */
   const page = await builder
-    .get('fbf70c8d650b4d819d862d386bf3da40', {
+    .get('page', {
       userAttributes: {
         urlPath: '/' + (params?.page?.join('/') || ''),
       },
@@ -38,7 +38,7 @@ export async function getStaticPaths() {
     Using the `fields` option will limit the size of the response
     and only return the `data.url` field from the matching pages.
   */
-  const pages = await builder.getAll('fbf70c8d650b4d819d862d386bf3da40', {
+  const pages = await builder.getAll('page', {
     fields: 'data.url', // only request the `data.url` field
     options: { noTargeting: true },
     limit: 0,
