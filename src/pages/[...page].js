@@ -1,14 +1,20 @@
-import { useRouter } from 'next/router';
-import DefaultErrorPage from 'next/error';
-import Head from 'next/head';
-import React from 'react';
-import { BuilderComponent, builder, useIsPreviewing, Builder } from '@builder.io/react';
-
+import { useRouter } from "next/router";
+import DefaultErrorPage from "next/error";
+import Head from "next/head";
+import React from "react";
+import {
+  BuilderComponent,
+  builder,
+  useIsPreviewing,
+  Builder,
+} from "@builder.io/react";
+import { MyFooter } from "../components/footer";
+import { MyHeader } from "../components/header";
 /*
   Initialize the Builder SDK with your organization's API Key
   The API Key can be found on: https://builder.io/account/settings
 */
-builder.init('ccda6c7abf4c4b8195aa67d47de420dd');
+builder.init("ccda6c7abf4c4b8195aa67d47de420dd");
 
 export async function getStaticProps({ params }) {
   /*
@@ -17,9 +23,9 @@ export async function getStaticProps({ params }) {
     learn more here: https://www.builder.io/c/docs/targeting-with-builder
   */
   const page = await builder
-    .get('page', {
+    .get("page", {
       userAttributes: {
-        urlPath: '/' + (params?.page?.join('/') || ''),
+        urlPath: "/" + (params?.page?.join("/") || ""),
       },
     })
     .toPromise();
@@ -38,14 +44,14 @@ export async function getStaticPaths() {
     Using the `fields` option will limit the size of the response
     and only return the `data.url` field from the matching pages.
   */
-  const pages = await builder.getAll('page', {
-    fields: 'data.url', // only request the `data.url` field
+  const pages = await builder.getAll("page", {
+    fields: "data.url", // only request the `data.url` field
     options: { noTargeting: true },
     limit: 0,
   });
 
   return {
-    paths: pages.map(page => `${page.data?.url}`),
+    paths: pages.map((page) => `${page.data?.url}`),
     fallback: true,
   };
 }
@@ -77,7 +83,9 @@ export default function Page({ page }) {
         <meta name="description" content={page?.data.descripton} />
       </Head>
       {/* Render the Builder page */}
+      <MyHeader />
       <BuilderComponent model="page" content={page} />
+      <MyFooter />
     </>
   );
 }
@@ -87,7 +95,7 @@ export default function Page({ page }) {
   You would typically do this in the file where the component is defined.
 */
 
-const MyCustomComponent = props => (
+const MyCustomComponent = (props) => (
   <div>
     <h1>{props.title}</h1>
     <p>{props.description}</p>
@@ -99,9 +107,9 @@ const MyCustomComponent = props => (
   https://www.builder.io/c/docs/custom-react-components#input-types
 */
 Builder.registerComponent(MyCustomComponent, {
-  name: 'ExampleCustomComponent',
+  name: "ExampleCustomComponent",
   inputs: [
-    { name: 'title', type: 'string' },
-    { name: 'description', type: 'string' },
+    { name: "title", type: "string" },
+    { name: "description", type: "string" },
   ],
 });
