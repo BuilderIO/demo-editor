@@ -113,3 +113,8 @@ Builder.registerComponent(MyCustomComponent, {
     { name: "description", type: "string" },
   ],
 });
+
+Builder.register("insertMenu", {
+  name: "Custom menu",
+  items: [{ name: "ExampleCustomComponent", icon: "" }],
+});
