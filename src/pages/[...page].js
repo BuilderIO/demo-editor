@@ -10,6 +10,8 @@ import {
 } from "@builder.io/react";
 import { MyFooter } from "../components/footer";
 import { MyHeader } from "../components/header";
+import { MyIconComponent } from "../components/icon-component";
+
 /*
   Initialize the Builder SDK with your organization's API Key
   The API Key can be found on: https://builder.io/account/settings
@@ -106,15 +108,13 @@ const MyCustomComponent = (props) => (
   This is a simple example of a custom component, you can view more complex input types here:
   https://www.builder.io/c/docs/custom-react-components#input-types
 */
-Builder.registerComponent(MyCustomComponent, {
-  name: "ExampleCustomComponent",
-  inputs: [
-    { name: "title", type: "string" },
-    { name: "description", type: "string" },
-  ],
-});
-
 Builder.register("insertMenu", {
-  name: "Custom menu",
-  items: [{ name: "ExampleCustomComponent", icon: "" }],
+  name: "Sample Components",
+  items: [
+    {
+      name: "IconComponent",
+      label: "Features",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2Fa1ed28c155ad469f9945d3ee7db08329",
+    },
+  ],
 });
