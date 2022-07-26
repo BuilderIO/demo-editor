@@ -45,6 +45,7 @@ const IconComponent = (props) => {
       >
         {icons.map((icon) => (
           <Image
+            key={icon}
             style={{
               cursor: "pointer",
               transition: "transform 1000ms ease-in-out",
