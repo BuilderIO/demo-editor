@@ -95,29 +95,20 @@ export default function Page({ page }) {
   );
 }
 
-/* 
-  This is an example of registering a custom component to be used in Builder.io. 
-  You would typically do this in the file where the component is defined.
-*/
-
-const MyCustomComponent = (props) => (
-  <div>
-    <h1>{props.title}</h1>
-    <p>{props.description}</p>
-  </div>
-);
-
 /*
-  This is a simple example of a custom component, you can view more complex input types here:
-  https://www.builder.io/c/docs/custom-react-components#input-types
+  Example of a custom insert menu, this will add a new section to the top
+  of your Builder editor. You can add custom icons to your components as well.
+  https://forum.builder.io/t/how-to-override-and-re-arrange-the-insert-menu-completely-in-builder/680
 */
 Builder.register("insertMenu", {
   name: "Sample Components",
   items: [
     {
       name: "IconComponent",
-      label: "Features",
       icon: "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2Fa1ed28c155ad469f9945d3ee7db08329",
+    },
+    {
+      name: "CodeBlock",
     },
   ],
 });
