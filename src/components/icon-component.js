@@ -15,7 +15,7 @@ const IconComponent = (props) => {
         style={{ gap: props.flexGap || DEFAULT_FLEX_GAP }}
       >
         {iconUrls.slice(0, props.numberOfIcons).map((icon) => (
-          <IconBlob icon={icon} />
+          <IconBlob key={icon} icon={icon} />
         ))}
       </div>
       <div className={styles.heroContainer}>
