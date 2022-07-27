@@ -51,7 +51,16 @@ const IconComponent = (props) => {
               transition: "transform 1000ms ease-in-out",
             }}
             onMouseOver={(event) => {
-              event.target.style.transform = "rotate3d(0,0,1,360deg)";
+              const randomDirectionNumber = Math.random();
+              const randomAxisNumber = Math.random();
+              const direction = randomDirectionNumber > 0.5 ? 1 : -1;
+              const axis =
+                randomAxisNumber > 0.7
+                  ? `0,0,${direction}`
+                  : randomAxisNumber > 0.3
+                  ? `0,${direction},0`
+                  : `${direction},0,0`;
+              event.target.style.transform = `rotate3d(${axis},360deg)`;
             }}
             onMouseOut={(event) => {
               event.target.style.transform = "rotate3d(0,0,1,0)";
