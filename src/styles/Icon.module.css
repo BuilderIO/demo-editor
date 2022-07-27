@@ -1,0 +1,53 @@
+.iconContainer {
+  display: flex;
+  width: 100%;
+  padding: 30px 55px;
+}
+
+.blobContainer {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.heroContainer {
+  width: 50%; 
+  margin-left: 45;
+}
+
+.heroLeadText {
+  color: #AC7EF4;
+  text-transform: uppercase;
+  font-family: monospace;
+  font-weight: 700;
+  font-size: 16;
+  margin-top: 20;
+}
+
+.heroTitleText {
+  color: white;
+  font-weight: 600;
+  font-size: 36;
+  margin: 16px 0;
+
+}
+
+.heroDescription {
+  color: white; 
+  font-size: 16; 
+  line-height: 1.5rem 
+}
+
+.heroCallout {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  color: white;
+  border: 4px solid #F7C92E;
+  border-radius: 99;
+  margin-top: 57;
+}
+
+.heroCalloutText {
+  margin-left: 10;
+}

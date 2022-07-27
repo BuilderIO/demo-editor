@@ -8,9 +8,12 @@ import {
   useIsPreviewing,
   Builder,
 } from "@builder.io/react";
+import "@builder.io/widgets";
 import { MyFooter } from "../components/footer";
 import { MyHeader } from "../components/header";
-import { MyIconComponent } from "../components/icon-component";
+
+import "../components/icon-component";
+import "../components/code-block";
 
 /*
   Initialize the Builder SDK with your organization's API Key
