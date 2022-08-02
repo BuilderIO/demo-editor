@@ -1,3 +1,8 @@
+import styles from "../styles/Footer.module.css";
+
 export function MyFooter() {
-  return <div>My Custom Footer Goes Here!</div>;
+  return (
+    <div></div>
+    // TOOD: add a custom footer
+  );
 }

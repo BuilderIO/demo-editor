@@ -19,4 +19,5 @@
 .video {
   opacity: 0.9;
   mix-blend-mode: multiply;
+  max-width: 100%;
 }
