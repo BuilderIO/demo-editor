@@ -10,7 +10,7 @@ const CodeBlock = (props) => (
 );
 
 Builder.registerComponent(CodeBlock, {
-  name: "Code Block",
+  name: "CodeBlock",
   inputs: [
     {
       name: "code",

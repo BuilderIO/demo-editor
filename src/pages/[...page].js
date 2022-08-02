@@ -14,6 +14,10 @@ import { MyHeader } from "../components/header";
 
 import "../components/icon-component";
 import "../components/code-block";
+import "../components/cards/product-card";
+import "../components/cards/blog-card";
+import "../components/cards/video-card";
+import "../components/cards/testimonial-card";
 
 /*
   Initialize the Builder SDK with your organization's API Key
@@ -108,7 +112,42 @@ Builder.register("insertMenu", {
       icon: "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2Fa1ed28c155ad469f9945d3ee7db08329",
     },
     {
-      name: "CodeBlock",
+      name: "ProductCard",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2Fde2737a22fc044cda090493969dfa02a",
+    },
+    {
+      name: "BlogCard",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2Fbf7386142d6748698fe463f37bdea447",
+    },
+    {
+      name: "VideoCard",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2Fb8bf305066e54544a969d88cd0f581f5",
+    },
+    {
+      name: "TestimonialCard",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2F15f9dfbcc91d47139b67d566f63f2848",
+    },
+  ],
+});
+
+Builder.register("insertMenu", {
+  name: "Custom Card Components",
+  items: [
+    {
+      name: "ProductCard",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2Fde2737a22fc044cda090493969dfa02a",
+    },
+    {
+      name: "BlogCard",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2Fbf7386142d6748698fe463f37bdea447",
+    },
+    {
+      name: "VideoCard",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2Fb8bf305066e54544a969d88cd0f581f5",
+    },
+    {
+      name: "TestimonialCard",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2F15f9dfbcc91d47139b67d566f63f2848",
     },
   ],
 });

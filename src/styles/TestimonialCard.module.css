@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 24px;
+  gap: 16px;
+  background: #1a1b23;
+  box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.11);
+  border-radius: 18px;
+  max-width: 354px;
+  margin: auto;
+}
+
+.divider {
+  display: flex;
+  width: 100%;
+  height: 0.5px;
+  margin: 16px 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.quote {
+  display: flex;
+  align-items: center;
+  font-family: "PT Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 100px;
+  text-align: center;
+  color: #18b6f6;
+}
+
+.testimonialDetails {
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+.testimonialDetails p {
+  margin-bottom: 47px;
+}
+
+.customer {
+  font-weight: 600;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.customerDetails {
+  font-weight: 400;
+  font-size: 12px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
