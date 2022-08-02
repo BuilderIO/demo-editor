@@ -10,7 +10,7 @@ export default function BlogCard(props) {
         <Image src="/svgs/orange-palette-blob.svg" height={145} width={160} />
       </div>
       <div className={styles.blogDetails}>
-        <div class={styles.blogHeading}>
+        <div className={styles.blogHeading}>
           <span className={styles.headingText}>Best Practices</span>
           <span className={styles.blogLength}>5 minute read</span>
         </div>
