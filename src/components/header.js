@@ -3,14 +3,43 @@ import styles from "../styles/Header.module.css";
 export function MyHeader() {
   return (
     <div className={styles.container}>
-      <div className={styles.title}>Welcome to the Builder Demo Editor</div>
-      <a
-        href="https://github.com/Builderio/demo-editor"
-        target="_blank"
-        rel="noreferrer"
-      >
-        View the sample code for this Next.js project
-      </a>
+      <div className={styles.innerContainer}>
+        <div className={styles.titleContainer}>
+          <svg
+            width="19"
+            height="22"
+            viewBox="0 0 19 22"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.2517 6.18703C18.2526 7.10982 18.0575 8.02111 17.6806 8.85389C17.3036 9.68668 16.7546 10.4198 16.0737 10.9993L0.413808 1.62495C0.353909 1.58895 0.298335 1.54548 0.248285 1.49548C0.169754 1.4143 0.107351 1.31742 0.0647214 1.21052C0.0220913 1.10361 8.90525e-05 0.988822 0 0.872847C0 0.641354 0.0871949 0.419342 0.242403 0.255651C0.397611 0.0919604 0.608118 0 0.827616 0L12.3853 0C13.9411 0 15.4333 0.651846 16.5334 1.81214C17.6336 2.97243 18.2517 4.54613 18.2517 6.18703Z"
+              fill="#18B4F4"
+            />
+            <path
+              d="M18.2517 15.8116C18.2519 16.6242 18.1003 17.4289 17.8055 18.1797C17.5108 18.9305 17.0787 19.6127 16.534 20.1874C15.9892 20.7621 15.3424 21.2179 14.6306 21.529C13.9188 21.84 13.1558 22.0001 12.3853 22.0001H0.827645C0.663927 21.9982 0.504408 21.9452 0.369271 21.8477C0.234134 21.7502 0.129451 21.6126 0.0684661 21.4524C0.00748108 21.2921 -0.00706542 21.1164 0.026667 20.9474C0.0603994 20.7785 0.140895 20.6238 0.257969 20.5031C0.304635 20.4537 0.357001 20.4107 0.413837 20.3751L6.57681 16.6859L16.0723 11.0007C16.7531 11.5801 17.3023 12.313 17.6794 13.1455C18.0565 13.9779 18.2521 14.8889 18.2517 15.8116Z"
+              fill="#FD6B3C"
+            />
+            <path
+              d="M16.0736 10.9995L6.57669 16.6861L0.41371 20.3753C0.354533 20.4099 0.299829 20.4525 0.250946 20.5019C2.60084 17.96 3.91473 14.5495 3.91177 10.9995C3.91619 7.44893 2.60267 4.03762 0.252325 1.49561C0.302376 1.54561 0.357949 1.58908 0.417849 1.62508L16.0736 10.9995Z"
+              fill="#A97FF2"
+            />
+          </svg>
+
+          <div className={styles.title}>
+            <b>Builder Demo Editor </b>
+          </div>
+          <div>Visually drag and drop using your existing code components</div>
+        </div>
+        <a
+          className={styles.repoLink}
+          href="https://github.com/Builderio/demo-editor"
+          target="_blank"
+          rel="noreferrer"
+        >
+          View the sample code for this Next.js project
+        </a>
+      </div>
     </div>
   );
 }
