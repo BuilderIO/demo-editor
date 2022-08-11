@@ -8,11 +8,15 @@ export default function ProductCard(props) {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <Image src="/svgs/yellow-smiley-blob.svg" height={145} width={160} />
+        <Image
+          src={props.productImage || "/svgs/yellow-smiley-blob.svg"}
+          height={145}
+          width={160}
+        />
       </div>
       <div className={styles.productInfo}>
-        <div className={styles.productTitle}>Product details</div>
-        <div className={styles.productPrice}>$20 / month</div>
+        <div className={styles.productTitle}>{props.productTitle}</div>
+        <div className={styles.productPrice}>{props.productPrice}</div>
 
         <div className={styles.divider} />
 
@@ -31,16 +35,17 @@ export default function ProductCard(props) {
           className={styles.productDescription}
           style={productDetailsOpen ? { maxHeight: 600 } : {}}
         >
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
-            euismod cursus tempor ac pretium laoreet eu. Mi quis et feugiat eu a
-            sit pretium aliquet amet.
-          </p>
+          <p>{props.productDescription}</p>
         </div>
 
         <div className={styles.divider} />
 
-        <button className={styles.productButton}>Let’s Go</button>
+        <button
+          className={styles.productButton}
+          style={props.buttonColor ? { background: props.buttonColor } : {}}
+        >
+          {props.buttonText}
+        </button>
       </div>
     </div>
   );
@@ -48,4 +53,43 @@ export default function ProductCard(props) {
 
 Builder.registerComponent(ProductCard, {
   name: "ProductCard",
+  inputs: [
+    {
+      name: "productTitle",
+      type: "string",
+      defaultValue: "Your Product Details Here",
+    },
+    {
+      name: "productDescription",
+      type: "longText",
+      defaultValue:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      name: "productPrice",
+      type: "string",
+      defaultValue: "$20 / month",
+      helperText:
+        "You can add validation to inputs, so if you enter a string without a number this will show a warning.",
+      regex: {
+        pattern: /\d/,
+        options: "g",
+        message: "Price must contain a number (e.g. $20)",
+      },
+    },
+    { name: "buttonColor", type: "color", defaultValue: "#1a73e8" },
+    {
+      name: "buttonText",
+      type: "string",
+      defaultValue: "Buy now",
+      enum: ["Buy now", "Let's go", "Add to cart"],
+    },
+
+    {
+      name: "productImage",
+      type: "file",
+      allowedFileTypes: ["jpg", "png", "svg"],
+      defaultValue: "/svgs/yellow-smiley-blob.svg",
+    },
+  ],
 });

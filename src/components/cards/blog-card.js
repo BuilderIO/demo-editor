@@ -7,31 +7,31 @@ export default function BlogCard(props) {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
-        <Image src="/svgs/orange-palette-blob.svg" height={145} width={160} />
+        <img src={props.thumbnail} />
       </div>
       <div className={styles.blogDetails}>
         <div className={styles.blogHeading}>
-          <span className={styles.headingText}>Best Practices</span>
-          <span className={styles.blogLength}>5 minute read</span>
+          <span className={styles.headingText}>{props.tag}</span>
+          <span className={styles.blogLength}>
+            {props.estimatedTime} minute read
+          </span>
         </div>
-        <div className={styles.blogTitle}>
-          Accelerate and unlock headless CMS
-        </div>
+        <div className={styles.blogTitle}>{props.title}</div>
 
-        <div className={styles.blogDescription}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
+        <div
+          className={styles.blogDescription}
+          dangerouslySetInnerHTML={{ __html: props.body }}
+        ></div>
 
         <div className={styles.divider} />
 
         <div className={styles.byLineContainer}>
           <span className={styles.byLine}>
-            <img src="https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2F91d681a0a2304c42b07bbb2f54af399d" />
-            Jane Builder
+            <img src={props.authorImage} />
+            {props.author}
           </span>
 
-          <span className={styles.publishDate}>Yesterday</span>
+          <span className={styles.publishDate}>{props.publishDate}</span>
         </div>
       </div>
     </div>
@@ -40,4 +40,37 @@ export default function BlogCard(props) {
 
 Builder.registerComponent(BlogCard, {
   name: "BlogCard",
+  inputs: [
+    {
+      name: "thumbnail",
+      type: "file",
+      defaultValue:
+        "https://cdn.builder.io/api/v1/image/assets%2F1f3bf1d766354f32ba70dde440fcef97%2F75e3e53ecc4a44b795592a4fbe57f702",
+      allowedFileTypes: ["png", "jpg", "svg"],
+    },
+
+    {
+      name: "title",
+      type: "string",
+      defaultValue: "Guide Your Customers with Best Practices",
+    },
+    { name: "tag", type: "string", defaultValue: "Best Practices" },
+    { name: "estimatedTime", type: "number", defaultValue: 5 },
+
+    {
+      name: "body",
+      type: "richText",
+      defaultValue:
+        "Empower  your teams to leverage your code components as building blocks to unlock their creativity. Create content for any experience, channel, and screen. A drag and drop experience makes building content easy and fast for your teams.",
+    },
+    { name: "author", type: "string", defaultValue: "Jane Builder" },
+    {
+      name: "authorImage",
+      type: "file",
+      defaultValue:
+        "https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2F91d681a0a2304c42b07bbb2f54af399d",
+      allowedFileTypes: ["png", "jpg", "svg"],
+    },
+    { name: "publishDate", type: "string", defaultValue: "Yesterday" },
+  ],
 });

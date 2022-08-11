@@ -9,14 +9,10 @@ export default function TestimonialCard(props) {
         <img src="https://cdn.builder.io/api/v1/image/assets%2Fccda6c7abf4c4b8195aa67d47de420dd%2F211041d0536c4f1cb1c19e8007c8cd7c" />
       </div>
       <div className={styles.testimonialDetails}>
-        <p>
-          With Builder, we’re able to see the same quality results that were
-          only previously possible through reliance on our engineering team, who
-          now have capacity to tackle higher-value projects.
-        </p>
+        <p>{props.testimonial}</p>
         <div className={styles.divider} />
-        <div className={styles.customer}>Everlane</div>
-        <div className={styles.customerDetails}>Lorem ipsum</div>
+        <div className={styles.customer}>{props.customer}</div>
+        <div className={styles.customerDetails}>{props.customerDetails}</div>
       </div>
     </div>
   );
@@ -24,4 +20,33 @@ export default function TestimonialCard(props) {
 
 Builder.registerComponent(TestimonialCard, {
   name: "TestimonialCard",
+  inputs: [
+    {
+      name: "testimonial",
+      type: "longText",
+      defaultValue:
+        "With Builder, we’re able to see the same quality results that were only previously possible through reliance on our engineering team, who now have capacity to tackle higher-value projects.",
+    },
+    {
+      name: "customer",
+      type: "string",
+      defaultValue: "Everlane",
+      enum: [
+        "Everlane",
+        "Alo Yoga",
+        "Afterpay",
+        "Zapier",
+        "Vista",
+        "Harry's",
+        "Chubbies",
+        "Atoms",
+      ],
+    },
+
+    {
+      name: "customerDetails",
+      type: "string",
+      defaultValue: "DAVE KING, CTO",
+    },
+  ],
 });
