@@ -27,7 +27,7 @@ export function MyHeader() {
           </svg>
 
           <div className={styles.title}>
-            <b>Builder Demo Site </b>
+            <b>Builder Demo</b>
           </div>
         </div>
         <a
@@ -38,7 +38,7 @@ export function MyHeader() {
             open("https://github.com/Builderio/demo-editor", "_blank");
           }}
         >
-          View the sample code for this Next.js project
+          View my source
         </a>
       </div>
     </div>
