@@ -1,6 +1,7 @@
 import React from "react";
 import { Builder } from "@builder.io/react";
 import styles from "../../styles/TestimonialCard.module.css";
+import { withTooltip } from "../with-tooltip";
 
 export default function TestimonialCard(props) {
   return (
@@ -18,7 +19,14 @@ export default function TestimonialCard(props) {
   );
 }
 
-Builder.registerComponent(TestimonialCard, {
+// Wrap our component with a tooltip pointing to it's source code
+const DemoTestimonialCard = withTooltip(
+  "https://github.com/BuilderIO/demo-editor/blob/main/src/components/cards/testimonial-card.js",
+  TestimonialCard
+);
+
+// Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
+Builder.registerComponent(DemoTestimonialCard, {
   name: "TestimonialCard",
   inputs: [
     {

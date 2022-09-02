@@ -4,6 +4,7 @@ import { Builder } from "@builder.io/react";
 import { IconBlob } from "./icon-blob";
 import { iconUrls } from "./icons";
 import styles from "../styles/Icon.module.css";
+import { withTooltip } from "./with-tooltip";
 
 const DEFAULT_FLEX_GAP = 10;
 
@@ -37,10 +38,17 @@ const IconComponent = (props) => {
   );
 };
 
-Builder.registerComponent(IconComponent, {
-  name: "IconComponent",
-  inputs: [
-    { name: "numberOfIcons", type: "number", defaultValue: 20 },
-    { name: "flexGap", type: "number", defaultValue: DEFAULT_FLEX_GAP },
-  ],
-});
+// Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
+Builder.registerComponent(
+  withTooltip(
+    "https://github.com/BuilderIO/demo-editor/blob/main/src/components/icon-component.js",
+    IconComponent
+  ),
+  {
+    name: "IconComponent",
+    inputs: [
+      { name: "numberOfIcons", type: "number", defaultValue: 20 },
+      { name: "flexGap", type: "number", defaultValue: DEFAULT_FLEX_GAP },
+    ],
+  }
+);

@@ -1,6 +1,7 @@
 import React from "react";
 import { Builder } from "@builder.io/react";
 import styles from "../../styles/VideoCard.module.css";
+import { withTooltip } from "../with-tooltip";
 
 export default function VideoCard(props) {
   return (
@@ -11,7 +12,14 @@ export default function VideoCard(props) {
   );
 }
 
-Builder.registerComponent(VideoCard, {
+// Wrap our component with a tooltip pointing to it's source code
+const DemoVideoCard = withTooltip(
+  "https://github.com/BuilderIO/demo-editor/blob/main/src/components/cards/video-card.js",
+  VideoCard
+);
+
+// Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
+Builder.registerComponent(DemoVideoCard, {
   name: "VideoCard",
   inputs: [
     {

@@ -27,15 +27,16 @@ export function MyHeader() {
           </svg>
 
           <div className={styles.title}>
-            <b>Builder Demo Editor </b>
+            <b>Builder Demo Site </b>
           </div>
-          <div>Visually drag and drop using your existing code components</div>
         </div>
         <a
           className={styles.repoLink}
-          href="https://github.com/Builderio/demo-editor"
-          target="_blank"
-          rel="noreferrer"
+          onClick={() => {
+            // Open with JS so will open in visual editor
+            // (by default links are intentionally disabled in the visual editor)
+            open("https://github.com/Builderio/demo-editor", "_blank");
+          }}
         >
           View the sample code for this Next.js project
         </a>

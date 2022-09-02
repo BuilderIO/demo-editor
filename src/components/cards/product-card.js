@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Builder } from "@builder.io/react";
 import Image from "next/image";
 import styles from "../../styles/ProductCard.module.css";
+import { withTooltip } from "../with-tooltip";
 
 export default function ProductCard(props) {
   const [productDetailsOpen, setProductDetailsOpen] = useState(false);
@@ -51,7 +52,14 @@ export default function ProductCard(props) {
   );
 }
 
-Builder.registerComponent(ProductCard, {
+// Wrap our component with a tooltip pointing to it's source code
+const DemoProductCard = withTooltip(
+  "https://github.com/BuilderIO/demo-editor/blob/main/src/components/cards/product-card.js",
+  ProductCard
+);
+
+// Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
+Builder.registerComponent(DemoProductCard, {
   name: "ProductCard",
   inputs: [
     {

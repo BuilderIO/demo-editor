@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Builder } from "@builder.io/react";
 import Image from "next/image";
 import styles from "../../styles/BlogCard.module.css";
+import { withTooltip } from "../with-tooltip";
 
 export default function BlogCard(props) {
   return (
@@ -38,7 +39,14 @@ export default function BlogCard(props) {
   );
 }
 
-Builder.registerComponent(BlogCard, {
+// Wrap our component with a tooltip pointing to it's source code
+const DemoBlogCard = withTooltip(
+  "https://github.com/BuilderIO/demo-editor/blob/main/src/components/cards/blog-card.js",
+  BlogCard
+);
+
+// Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
+Builder.registerComponent(DemoBlogCard, {
   name: "BlogCard",
   inputs: [
     {
