@@ -108,19 +108,19 @@ Builder.register("insertMenu", {
   name: "Sample Components",
   items: [
     {
-      item: "IconComponent",
+      name: "IconComponent",
     },
     {
-      item: "ProductCard",
+      name: "ProductCard",
     },
     {
-      item: "BlogCard",
+      name: "BlogCard",
     },
     {
-      item: "VideoCard",
+      name: "VideoCard",
     },
     {
-      item: "TestimonialCard",
+      name: "TestimonialCard",
     },
   ],
 });
