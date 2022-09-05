@@ -38,17 +38,18 @@ const IconComponent = (props) => {
   );
 };
 
-// Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
-Builder.registerComponent(
-  withTooltip(
-    "https://github.com/BuilderIO/demo-editor/blob/main/src/components/icon-component.js",
-    IconComponent
-  ),
-  {
-    name: "IconComponent",
-    inputs: [
-      { name: "numberOfIcons", type: "number", defaultValue: 20 },
-      { name: "flexGap", type: "number", defaultValue: DEFAULT_FLEX_GAP },
-    ],
-  }
+// Wrap our component with a tooltip pointing to it's source code
+const DemoIconComponent = withTooltip(
+  "https://github.com/BuilderIO/demo-editor/blob/main/src/components/icon-component.js",
+  IconComponent
 );
+
+// Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
+Builder.registerComponent(DemoIconComponent, {
+  name: "IconComponent",
+  image: "https://tabler-icons.io/static/tabler-icons/icons-png/grid-dots.png",
+  inputs: [
+    { name: "numberOfIcons", type: "number", defaultValue: 20 },
+    { name: "flexGap", type: "number", defaultValue: DEFAULT_FLEX_GAP },
+  ],
+});

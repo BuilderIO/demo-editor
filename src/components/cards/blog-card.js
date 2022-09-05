@@ -48,6 +48,7 @@ const DemoBlogCard = withTooltip(
 // Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
 Builder.registerComponent(DemoBlogCard, {
   name: "BlogCard",
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/article.png',
   inputs: [
     {
       name: "thumbnail",

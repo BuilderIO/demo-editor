@@ -61,6 +61,7 @@ const DemoProductCard = withTooltip(
 // Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
 Builder.registerComponent(DemoProductCard, {
   name: "ProductCard",
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/shopping-cart.png',
   inputs: [
     {
       name: "productTitle",

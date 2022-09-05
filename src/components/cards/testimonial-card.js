@@ -28,6 +28,7 @@ const DemoTestimonialCard = withTooltip(
 // Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
 Builder.registerComponent(DemoTestimonialCard, {
   name: "TestimonialCard",
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/quote.png',
   inputs: [
     {
       name: "testimonial",

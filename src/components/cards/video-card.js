@@ -21,6 +21,7 @@ const DemoVideoCard = withTooltip(
 // Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
 Builder.registerComponent(DemoVideoCard, {
   name: "VideoCard",
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/brand-youtube.png',
   inputs: [
     {
       name: "title",

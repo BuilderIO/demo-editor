@@ -19,6 +19,7 @@ const DemoCodeBlock = withTooltip(
 // Learn about registering custom components: https://www.builder.io/c/docs/custom-components-intro
 Builder.registerComponent(DemoCodeBlock, {
   name: "CodeBlock",
+  image: 'https://tabler-icons.io/static/tabler-icons/icons-png/code-plus.png',
   inputs: [
     {
       name: "code",
