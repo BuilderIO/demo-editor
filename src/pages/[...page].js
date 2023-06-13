@@ -122,5 +122,8 @@ Builder.register("insertMenu", {
     {
       name: "TestimonialCard",
     },
+    {
+      name: "CodeBlock",
+    },
   ],
 });
